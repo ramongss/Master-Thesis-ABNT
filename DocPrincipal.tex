@@ -17,14 +17,15 @@
 \include{Pretextuais/capa}
 
 %% FOLHA DE ROSTO
-\include{Pretextuais/folha_rosto1} %% QUALIFICAÇÃO
-%\include{Pretextuais/folha_rosto2} %% DISSERTAÇÃO
+%\include{Pretextuais/folha_rosto1} %% QUALIFICAÇÃO
+\include{Pretextuais/folha_rosto2} %% DISSERTAÇÃO
 
 %% FICHA CATALOGRÁFICA
 %\includepdf{Pretextuais/ficha.pdf}
 
 %% FOLHA DE APROVAÇÃO
 %\include{Pretextuais/folha_aprovacao}
+%\include{Pretextuais/folha_aprovacao.pdf}
 
 %% DEDICATÓRIA
 %\include{Pretextuais/dedicatoria}
@@ -43,13 +44,13 @@
 
 %% LISTA DE TABELAS
 %\newpage 
-%\pdfbookmark[0]{\listtablename}{lot}
+%\pdfbookmark[1]{\listtablename}{lot}
 %\listoftables
 
 %% LISTA DE FIGURAS
-%\newpage 
-%\pdfbookmark[0]{\listfigurename}{lof}
-%\listoffigures 
+\newpage 
+\pdfbookmark[1]{\listfigurename}{lof}
+\listoffigures 
 
 %% LISTA DE ABREVIAÇÕES
 %\newpage 
@@ -57,7 +58,7 @@
 
 %% SUMÁRIO
 \newpage
-\pdfbookmark[0]{\contentsname}{toc}
+\pdfbookmark[1]{\contentsname}{toc}
 \tableofcontents 
 
 %-----------------------------------------------------------------
@@ -69,20 +70,11 @@
 %% REFERENCIAL
 \include{Referencial/sec:referencial}
 
-%% METODOLOGIA
-\include{Metodologia/sec:metodologia}
-
-%% DESCRIÇÃO DO CENÁRIO
-\include{Cenario/sec:cenario}
-
 %% RESULTADOS
-%\include{Resultados/sec:resultados}
+\include{Resultados/sec:resultados}
 
 %% CONCLUSÕES
-%\include{Conclusoes/sec:conclusoes}
-
-%% CRONOGRAMA
-\include{Cronograma/sec:cronograma}
+\include{Conclusoes/sec:conclusoes}
 
 %-----------------------------------------------------------------
 %% ELEMENTOS POS-TEXTUAIS
@@ -90,4 +82,9 @@
 %% BIBLIOGRAFIA
 \include{Bibliografia/sec:bibliografia}
 
+%% APÊNDICES
+\include{Apendices/sec:apendices}
+
+%-----------------------------------------------------------------
+%% FIM DO DOCUMENTO
 \end{document}

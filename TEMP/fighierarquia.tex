@@ -1,0 +1,21 @@
+\begin{figure}[!ht]
+    \begin{center}
+    \begin{tikzpicture}
+    \node at (0,4) [rectangle,draw,thick] (plan) {Planejamento da Produção};
+    \node at (0,2) [rectangle,draw,thick] (prog) {Programação da Produção};
+    \node at (0,0) [rectangle,draw,thick] (exec) {Execução da Produção};
+    \node at (4,4) [right] {Longo prazo (estratégico)};
+    \node at (4,2) [right] {Médio prazo (tático)};
+    \node at (4,0) [right] {Curto prazo (controle)};
+    \draw[dotted, thick] (-4, 3) -- (4,3);
+    \draw[dotted, thick] (-4, 1) -- (4,1);
+    \draw [->, thick] (plan) -- (prog);
+    \draw [->, thick] (prog) -- (exec);
+    \draw (exec.west) edge[pil,bend left=45] (plan.west);
+    \draw (exec.west) edge[pil,bend left=45] (prog.west);
+    %\draw [->, thick] (exec) -- (-3,0) -- (-3,4) -- (plan);
+    \end{tikzpicture}
+    \end{center}
+    \caption{Estrutura básica da hierarquia do planejamento e controle da produção.}
+    \label{fig:hierarquia}
+\end{figure}

@@ -12,6 +12,10 @@
 \usepackage{lipsum}                     %% LOREM IPSUM
 \usepackage[table,xcdraw]{xcolor}       %% TABELA COLORIDA
 \usepackage{multirow}                   %% LINHAS MESCLADAS
+\usepackage{float}                      %% PREVENIR FLOAT
+\usepackage{placeins}                   %% CRIAR FLOTBARRIER
+\usepackage{longtable}                  %% TABELA CONTÍNUA
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} %% FAZER QUEBRA DE LINHA DENTRO DE TABELA
 \usepackage{nomencl}                    %% NOMENCLATURA
 \renewcommand{\nomname}{Lista de Abreviaturas e Siglas} %% RENOMEAR LISTA DE NOMENCLATURA
 \makenomenclature                       %% FAZER A LISTA DE ABREVIAÇÕES
@@ -63,6 +67,7 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} %% PONTOS NO SUMÁRIO 
 \usepackage[alf, abnt-emphasize=bf]{abntex2cite} %% CITAÇÃO PADRÃO ABNT
 \usepackage{pdfpages}                   %% IMPORTAR PÁGINAS PDF
+
 \usepackage{titlesec}                   %% HABILITAR OS TÓPICOS QUATERNÁRIOS
 \titleclass{\subsubsubsection}{straight}[\subsection]
 \newcounter{subsubsubsection}[subsubsection]
