@@ -1,7 +1,11 @@
 \section{Resultados} \label{sec:result}
 \subsection{Planejamento do experimento} \label{subsec:planexp}
 
-O planejamento do experimento foi baseado na geração de cenários aleatórios de sistemas produtivos a fim de realizar simulações. O planejamento então seguiu as seguintes etapas:
+Na fase inicial desse estudo diversos experimentos numéricos realizados  sugeriram que sistemas desequilibrados podiam ser representados usando-se sistemas equilibrados equivalentes em certo sentido específico, com um erro que que podia ser estimado a priori. 
+    
+Então foi planejado e executado um experimento numérico para testar a seguinte hipótese: O \textit{makespan} de sistemas de manufatura com $m$ máquinas e $n$ lotes com tempos distintos $p_i$ de processamento em cada máquina $i$ podem ser estimados adequadamente usando-se um tempo médio $p$ para cada máquina?
+
+Deste modo, o planejamento do experimento foi baseado na geração de cenários aleatórios de sistemas produtivos a fim de realizar simulações. O planejamento então seguiu as seguintes etapas:
 
 \begin{itemize}
     \item Geração dos dados do problema (cenários);
@@ -65,7 +69,9 @@ O planejamento do experimento foi baseado na geração de cenários aleatórios 
     
     Nas técnicas de \textit{Lot Streaming} para se obter o valor do \textit{Makespan}, é preciso além dos dados do sistema, calcula a quantidade de sublotes ($n$) e o tamanho dos sublotes ($L$). 
     
-    Deve-se determinar o número de sublotes a serem divididos, onde $U = L _ { 1 } + L _ { 2 } + \ldots + L _ { n }$. Para o experimento foram simulados começando com 1 sublote (isto é, sem o \textit{Lot Streaming}) até 6 sublotes, uma vez que foi observado que a partir dessa quantidade os ganhos no \textit{Makespan} foram inferiores a 5\%.
+    É importante ressaltar que pelo fato de não existir uma teoria geral para o problema geral de \textit{lot streaming}, os cálculos utilizados são para problemas de 2 máquinas, uma vez que o experimento se deu por meio da resolução de $m-1$ subproblemas de 2 máquinas.
+    
+    A teoria estabelecida para o problema de 2 máquinas, afirma que deve-se determinar o número de sublotes a serem divididos, onde $U = L _ { 1 } + L _ { 2 } + \ldots + L _ { n }$. Para o experimento foram simulados começando com 1 sublote (isto é, sem o \textit{Lot Streaming}) até 6 sublotes, uma vez que foi observado que a partir dessa quantidade os ganhos no \textit{Makespan} foram inferiores a 5\%.
     
     Ainda, de acordo com \citeonline{Trietsch1993}, os tamanhos de sublotes devem seguir uma progressão geométrica dada pela Equação~\ref{eq:tamanhosublote}. 
     
@@ -82,7 +88,7 @@ O planejamento do experimento foi baseado na geração de cenários aleatórios 
     
     Além disso, também foi calculado o \textit{Makespan} dos cenários equilibrados equivalente, denotado por $M_{eq}$.
     
-    Por fim, para cada cenário foi calculado o \textit{Makespan} partindo de 1 sublote à 6 sublotes, da mesma maneira para os cenários equilibrados equivalentes. Tendo ambos resultados em mãos, calcula-se então o erro ($e$) gerado pela diferença de desempenho do cenário desequilibrado para o seu equivalente, conforme a Equação~\ref{eq:erromakespan}.
+    Por fim, para cada cenário foi calculado o \textit{Makespan} partindo de 1 sublote à 6 sublotes, da mesma maneira para os cenários equilibrados equivalentes. Tendo ambos resultados em mãos, calcula-se então o desvio gerado pela diferença de desempenho do cenário desequilibrado para o seu equivalente. No decorrer deste trabalho este desvio será chamado de erro ($e$), e é calculado conforme a Equação~\ref{eq:erromakespan}.
     
     \begin{eqnarray}
         e = \left|\frac{M - M_{eq}}{M_{eq}}\right|
